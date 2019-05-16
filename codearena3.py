@@ -1,7 +1,7 @@
 s = "aahkcrehaccccccckkkkkerearthhhackerearttheatrha"
+#s = "hckearerhhhahhhhhthhackerearth"
 l = len(s)
-code = [0,0,0,0,0,0,0]
-count=0
+code = [0]*7
 for i in range(0,l):
     if s[i] == 'h':
         code[0] = code[0] + 1
@@ -18,8 +18,13 @@ for i in range(0,l):
     elif s[i] == 't':
         code[6] = code[6] + 1
 
-new = list()
-new.append(code[2])
-new.append(code[3])
-new.append(code[6])
-print(min(new))
+new1 = list()
+new1.append(code[2])
+new1.append(code[3])
+new1.append(code[6])
+new2 = list()
+new2.append(int(code[0]/2))
+new2.append(int(code[1]/2))
+new2.append(int(code[4]/2))
+new2.append(int(code[5]/2))
+print(min(min(new1),min(new2)))
